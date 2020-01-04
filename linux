@@ -1,0 +1,73 @@
+rm *.exe
+rm miracl.a
+cp mirdef.lnx mirdef.h
+gcc -c mrcore.c
+gcc -c mrarth0.c
+gcc -c mrarth1.c
+gcc -c mrarth2.c
+gcc -c mralloc.c
+gcc -c mrsmall.c
+gcc -c mrio1.c
+gcc -c mrio2.c
+gcc -c mrgcd.c
+gcc -c mrjack.c
+gcc -c mrxgcd.c
+gcc -c mrarth3.c
+gcc -c mrbits.c
+gcc -c mrrand.c
+gcc -c mrprime.c
+gcc -c mrcrt.c
+gcc -c mrscrt.c
+gcc -c mrmonty.c
+gcc -c mrpower.c
+gcc -c mrsroot.c
+gcc -c mrcurve.c
+gcc -c mrfast.c
+gcc -c mrshs.c
+gcc -c mrshs256.c
+gcc -c mrshs512.c
+gcc -c mrsha3.c
+gcc -c mrfpe.c
+gcc -c mraes.c
+gcc -c mrgcm.c
+gcc -c mrlucas.c
+gcc -c mrzzn2.c
+gcc -c mrzzn2b.c
+gcc -c mrzzn3.c
+gcc -c mrzzn4.c
+gcc -c mrecn2.c
+gcc -c mrstrong.c
+gcc -c mrbrick.c
+gcc -c mrebrick.c
+gcc -c mrec2m.c
+gcc -c mrgf2m.c
+gcc -c mrflash.c
+gcc -c mrfrnd.c
+gcc -c mrdouble.c
+gcc -c mrround.c
+gcc -c mrbuild.c
+gcc -c mrflsh1.c
+gcc -c mrpi.c
+gcc -c mrflsh2.c
+gcc -c mrflsh3.c
+gcc -c mrflsh4.c
+gcc -c mrmuldv.c
+g++ -c big.cpp
+g++ -c zzn.cpp
+g++ -c ecn.cpp
+g++ -c ec2.cpp
+g++ -c flash.cpp
+g++ -c crt.cpp
+g++ -c zzn2.cpp
+g++ -c ssp_pair.cpp
+ar rc miracl.a mrcore.o mrarth0.o mrarth1.o mrarth2.o mralloc.o mrsmall.o mrzzn2.o mrzzn3.o
+ar r miracl.a mrio1.o mrio2.o mrjack.o mrgcd.o mrxgcd.o mrarth3.o mrbits.o mrecn2.o mrzzn4.o
+ar r miracl.a mrrand.o mrprime.o mrcrt.o mrscrt.o mrmonty.o mrcurve.o mrsroot.o mrzzn2b.o
+ar r miracl.a mrpower.o mrfast.o mrshs.o mrshs256.o mraes.o mrlucas.o mrstrong.o mrgcm.o     
+ar r miracl.a mrflash.o mrfrnd.o mrdouble.o mrround.o mrbuild.o
+ar r miracl.a mrflsh1.o mrpi.o mrflsh2.o mrflsh3.o mrflsh4.o 
+ar r miracl.a mrbrick.o mrebrick.o mrec2m.o mrgf2m.o mrmuldv.o mrshs512.o mrsha3.o mrfpe.o
+ar r miracl.a big.o zzn.o ecn.o ec2.o flash.o crt.o
+ar r miracl.a zzn2.o ssp_pair.o
+rm mr*.o
+g++ brent.cpp big.o zzn.o miracl.a -o brent
